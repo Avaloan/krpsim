@@ -86,12 +86,12 @@ def getObjective(line, toOptimize):
 def functionTable(stocks, processList, toOptimize, index, line):
     if index == 0:
         index += (not getStock(line, stocks, processList))
-        if not isStock(line):
+        if index > 0 and not isProcess(line):
             print("ERROR")
             exit(0)
     if index == 1:
         index += (not getProcess(line, stocks, processList))
-        if not isObjective(line):
+        if index > 1 and not isObjective(line):
             print("ERROR")
             exit(0)
     if index == 2:
